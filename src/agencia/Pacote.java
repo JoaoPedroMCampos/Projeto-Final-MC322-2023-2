@@ -6,8 +6,11 @@ import java.time.LocalDate;
 public class Pacote {
     private LinkedList<Destino> destinos;
     private LinkedList<Transporte> transportes;
+    private int nVagasTransportes; //colocar na UML
     private LinkedList<Acomodacao> acomodacoes;
+    private LinkedList<VagasAcomodacoes> vagasAcomodacoes; //colocar na UML
     private LinkedList<Turismo> turismos;
+    private LinkedList<VagasTurismo> vagasTurismos; //colocar na UML
     private Usuario user;
     private int nPassageiros;
     private float preco;
@@ -17,7 +20,8 @@ public class Pacote {
 
     public Pacote(LinkedList<Destino> destinos, LinkedList<Transporte> transportes, LinkedList<Acomodacao> acomodacoes,
             LinkedList<Turismo> turismos, Usuario user, int nPassageiros, float preco, LocalDate dataFim,
-            LocalDate dataInicio, Categoria categoria) {
+            LocalDate dataInicio, Categoria categoria, int nVagasTransportes, LinkedList<VagasAcomodacoes> vagasAcomodacoes,
+            LinkedList<VagasTurismo> vagasTurismos) {
         this.destinos = destinos;
         this.transportes = transportes;
         this.acomodacoes = acomodacoes;
@@ -28,6 +32,9 @@ public class Pacote {
         this.dataFim = dataFim;
         this.dataInicio = dataInicio;
         this.categoria = categoria;
+        this.nVagasTransportes = nVagasTransportes;
+        this.vagasAcomodacoes = vagasAcomodacoes;
+        this.vagasTurismos = vagasTurismos;
     }
 
     public enum Categoria{
@@ -112,6 +119,30 @@ public class Pacote {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public int getnVagasTransportes() {
+        return nVagasTransportes;
+    }
+
+    public void setnVagasTransportes(int nVagasTransportes) {
+        this.nVagasTransportes = nVagasTransportes;
+    }
+
+    public LinkedList<VagasAcomodacoes> getVagasAcomodacoes() {
+        return vagasAcomodacoes;
+    }
+
+    public void setVagasAcomodacoes(LinkedList<VagasAcomodacoes> vagasAcomodacoes) {
+        this.vagasAcomodacoes = vagasAcomodacoes;
+    }
+
+    public LinkedList<VagasTurismo> getVagasTurismos() {
+        return vagasTurismos;
+    }
+
+    public void setVagasTurismos(LinkedList<VagasTurismo> vagasTurismos) {
+        this.vagasTurismos = vagasTurismos;
     }
     
 
