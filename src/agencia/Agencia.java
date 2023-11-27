@@ -1,6 +1,7 @@
 package agencia;
 import java.util.List;
 import java.util.Set;
+import agencia.Pacote;
 
 public class Agencia {
 	
@@ -105,4 +106,50 @@ public class Agencia {
     public List<Turismo> setListaTurismo() {
         return listaTurismo;
     }
-}
+
+	//Tratamento de excecoes Reserva Transporte
+	public void fazerReservaTransporte (int nPassageiros, int nVagasTransportes) {
+		try {
+			if (nVagasTransportes == nPassageiros) {
+				throw new IllegalArgumentException ();
+			}
+			nPassageiros = nPassageiros + 1;
+			System.out.println("Reserva de transporte feita com sucesso");
+		}
+		catch (IllegalArgumentException e) {
+			System.err.println("Erro ao reservar transporte, vagas lotadas");
+		}
+	}
+
+	//Tratamento de excecoes Reserva Acomodacao
+	public void fazerReservaAcomodacao (LinkedList Acomodacao, LinkedList VagasAcomodacoes) {
+		try {
+			for (int i = 0; i < Acomodacao.size(); i++) {
+				if (VagasAcomodacoes.get(i) == Acomodacao.get(i)) {
+					throw new IllegalArgumentException ();
+				}
+			}
+			VagasAcomodacoes = VagasAcomodacoes + 1;
+			System.out.println("Reserva de acomodação feita com sucesso");
+		}
+		catch (IllegalArgumentException e) {
+			System.err.println("Erro ao reservar acomodação, vagas lotadas");
+		}
+	}
+
+	//Tratamento de excecoes Reserva Turismo
+	public void fazerReservaTurismos (LinkedList Turismo, LinkedList VagasTurismo) {
+		try {
+			for (int i = 0; i < Turismo.size(); i++) {
+				if (VagasTurismo.get(i) == Turismo.get(i)) {
+					throw new IllegalArgumentException ();
+				}
+			}
+			VagasTurismo = VagasTurismo + 1;
+			System.out.println("Reserva de turismo feita com sucesso");
+		}
+		catch (IllegalArgumentException e) {
+			System.err.println("Erro ao reservar turismo, vagas lotadas");
+		}
+	}
+}	
