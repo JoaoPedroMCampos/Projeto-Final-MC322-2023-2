@@ -1,6 +1,7 @@
 package agencia;
 public class Destino {
     private String name;
+    //falta adicionar resto de possiveis atributos necessarios
 
     public Destino(){
         

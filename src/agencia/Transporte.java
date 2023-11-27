@@ -3,20 +3,20 @@ package agencia;
 
 public class Transporte {
         public enum TransporteTipo {
-        Maritimo("Navio"),
-        Aviao("Avião"),
-        Onibus("Ônibus");
+            Maritimo("Navio"),
+            Aviao("Avião"),
+            Onibus("Ônibus");
 
-        private String descricao;
+            private String descricao;
 
-        TransporteTipo(String descricao) {
-            this.descricao = descricao;
+            TransporteTipo(String descricao) {
+                this.descricao = descricao;
+            }
+
+            public String getDescricao() {
+                return descricao;
+            }
         }
-
-        public String getDescricao() {
-            return descricao;
-        }
-    }
 
     private TransporteTipo tipo;
     private String origem;
