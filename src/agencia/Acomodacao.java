@@ -1,3 +1,5 @@
+package agencia;
+
 public class Acomodacao {
     //atributos
     private String local;
@@ -33,7 +35,7 @@ public class Acomodacao {
         this.lotacao = lotacao;
     }
 
-    public void setPreco (flaot preco) {
+    public void setPreco (float preco) {
         this.preco = preco;
     }
 }
