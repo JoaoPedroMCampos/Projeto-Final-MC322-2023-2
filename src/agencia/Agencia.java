@@ -10,7 +10,7 @@ import java.util.LinkedList;
 public class Agencia {
     
     // atributos da classe
-    private int cnpj;
+    private String cnpj;
     private String nome;
     private int telefone;
     private String email;
@@ -20,8 +20,10 @@ public class Agencia {
     private List<Acomodacao> listaAcomodacao;
     private List<Turismo> listaTurismo;
 
+    private Usuario currentUser;
+
     // construtor da classe
-    public Agencia(int cnpj, String nome, int telefone, String email, List<Usuario> listaUsuario, 
+    public Agencia(String cnpj, String nome, int telefone, String email, List<Usuario> listaUsuario, 
             Set<Destino> listaDestinos, List<Transporte> listaTransporte, 
             List<Acomodacao> listaAcomodacao, List<Turismo> listaTurismo) {
 
@@ -34,14 +36,40 @@ public class Agencia {
         this.listaTransporte = listaTransporte;
         this.listaTurismo = listaTurismo;
         this.listaAcomodacao = listaAcomodacao;
+        currentUser = null;
     }
+
+    public boolean logIn(String login, String senha){
+		if(currentUser != null){
+			System.out.println("Por favor, faça log out antes.");
+			
+			//lançamento de exceção talvez?
+			
+			return false;
+		}else{
+            if(listaUsuario == null){
+                System.out.println("Agencia nao possui usuarios cadastrados no sistema.");
+                return false;
+            }
+			for(Usuario u : listaUsuario){
+				if(u.getLogin().equals(login) && u.getSenha().equals(senha)){
+					//login com sucesso
+					int index = listaUsuario.indexOf(u);
+					currentUser = listaUsuario.get(index);
+					return true;
+				}
+			}
+			System.out.println("Login ou senha inválidos.");
+			return false;
+		}
+	}
 
     // Getters e Setters
 
-    public int getCnpj() {
+    public String getCnpj() {
         return cnpj;
     }
-    public void setCnpj(int cnpj) {
+    public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
 

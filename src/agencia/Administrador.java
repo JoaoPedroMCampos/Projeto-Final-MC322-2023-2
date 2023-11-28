@@ -10,7 +10,7 @@ public class Administrador extends Usuario {
     private String cargo;
 
     // Construtor da classe Administrador que chama o construtor da classe pai (Usuario)
-    public Administrador(String login, String senha, String nome, int cpf, int telefone, String email, LocalDate nascimento, String cargo) {
+    public Administrador(String login, String senha, String nome, String cpf, int telefone, String email, LocalDate nascimento, String cargo) {
         // Chamando o construtor da classe pai (Usuario)
         super(login, senha, nome, cpf, telefone, email, nascimento);
 

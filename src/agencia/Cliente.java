@@ -16,7 +16,7 @@ public class Cliente extends Usuario {
     private String tipoCliente;
     
     // Construtor da classe Cliente que chama o construtor da classe pai (Usuario)
-    public Cliente(String login, String senha, String nome, int cpf, int telefone, String email, LocalDate nascimento, List<Float> endereco, ArrayList<Pacote> pacotes, String tipoCliente) {
+    public Cliente(String login, String senha, String nome, String cpf, int telefone, String email, LocalDate nascimento, List<Float> endereco, ArrayList<Pacote> pacotes, String tipoCliente) {
         // Chamando o construtor da classe pai (Usuario)
         super(login, senha, nome, cpf, telefone, email, nascimento);
 

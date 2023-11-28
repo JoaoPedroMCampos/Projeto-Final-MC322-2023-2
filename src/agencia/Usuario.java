@@ -9,14 +9,17 @@ public class Usuario {
     private String login;
     private String senha;
     private String nome;
-    private int cpf;
+    private String cpf;
     private int telefone;
     private String email;
     private LocalDate nascimento;
     private LinkedList<Pacote> listaPacotes;
 
     // construtor da classe
-    public Usuario(String login, String senha, String nome, int cpf, int telefone, String email, LocalDate nascimento) {
+    public Usuario(){
+
+    }
+    public Usuario(String login, String senha, String nome, String cpf, int telefone, String email, LocalDate nascimento) {
         this.login = login;
         this.senha = senha;
         this.nome = nome;
@@ -41,7 +44,7 @@ public class Usuario {
         return nome;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
@@ -70,7 +73,7 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
