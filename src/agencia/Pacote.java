@@ -3,6 +3,8 @@ package agencia;
 import java.util.LinkedList;
 import java.time.LocalDate;
 
+//ASSOCIAÇÃO (Cliente -> Pacote): - um cliente pode ter varios pacotes, e um pacote especifico tem um unico cliente.
+
 public class Pacote {
     private LinkedList<Destino> destinos;
     private LinkedList<Transporte> transportes;

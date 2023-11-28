@@ -2,6 +2,8 @@ package agencia;
 
 import java.time.LocalDate;
 
+//HERANÇA (Usuario -> Administrador): Um administrador herda os métodos e atributos do Usuario e aplica seus respectivos próprios.
+
 public class Administrador extends Usuario {
 
     // Atributos adicionais específicos da classe Administrador
@@ -19,4 +21,13 @@ public class Administrador extends Usuario {
     // Outros métodos da classe Administrador...
 
     // Getters e setters específicos da classe Administrador...
+    
+	public String getCargo() {
+		return cargo;
+	}
+
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
+	}
+    
 }
