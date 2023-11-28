@@ -25,6 +25,9 @@ public class Cliente extends Usuario {
         this.pacotes = new ArrayList<>();
         this.tipoCliente = tipoCliente;
     }
+	public Cliente(){
+		
+	}
 
 
     // Outros métodos da classe Cliente...

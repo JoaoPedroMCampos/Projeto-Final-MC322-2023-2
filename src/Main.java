@@ -43,19 +43,24 @@ public class Main {
                 case 2:
                     //sign in
                     //criação de novo usuario para ser salvo em agencia.ListaUsuario
+                    Usuario cliente = new Cliente();
                     System.out.println("Digite usuario para login:");
-                    login = input.nextLine();
+                    cliente.setLogin(input.nextLine());
+                    // login = input.nextLine();
                     System.out.println("Digite senha para login:");
-                    senha = input.nextLine();
+                    cliente.setSenha(input.nextLine());
                     System.out.println("Digite nome para usuario:");
-                    nome = input.nextLine(); 
+                    cliente.setNome(input.nextLine());
                     System.out.println("Digite cpf para usuario");
-                    cpf = input.nextLine();
+                    cliente.setCpf(input.nextLine());
                     System.out.println("Digite telefone para usuario");
-                    telefone = input.nextLine();
+                    cliente.setTelefone(Integer.parseInt(input.nextLine()));
                     System.out.println("Digite email para usuario");
-                    email = input.nextLine();
-                    System.out.println("Digite data de nascimento para usuario");
+                    cliente.setEmail(input.nextLine());
+                    System.out.println("Digite data de nascimento para usuario('dd/MM/YYYY')");
+                    String dataUsuario = input.nextLine(); 
+                    LocalDate nascimentoUsuario = LocalDate.of(Integer.parseInt(dataUsuario.split("/")[2]),Integer.parseInt(dataUsuario.split("/")[1]),Integer.parseInt(dataUsuario.split("/")[0]));
+                    agencia.adicionarUsuario(cliente);
                     flagLogin = false;
                     break;
                 default:

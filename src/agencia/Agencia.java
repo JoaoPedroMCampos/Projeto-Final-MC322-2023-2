@@ -39,6 +39,18 @@ public class Agencia {
         currentUser = null;
     }
 
+    public boolean adicionarUsuario(Usuario user){
+        for(Usuario u : listaUsuario){
+            if(u.getLogin().equals(user.getLogin()) && u.getSenha().equals(user.getSenha())){
+                //login e senha ja existe
+                System.out.println("Login ou senha ja se encontra cadastrado no sistema.");
+                return false;
+            }
+        }
+        this.listaUsuario.add(user);
+        return true;
+    }
+
     public boolean logIn(String login, String senha){
 		if(currentUser != null){
 			System.out.println("Por favor, faça log out antes.");
@@ -69,10 +81,82 @@ public class Agencia {
     public String getCnpj() {
         return cnpj;
     }
+    
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(int telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public List<Usuario> getListaUsuario() {
+        return listaUsuario;
+    }
+
+    public void setListaUsuario(List<Usuario> listaUsuario) {
+        this.listaUsuario = listaUsuario;
+    }
+
+    public Set<Destino> getListaDestinos() {
+        return listaDestinos;
+    }
+
+    public void setListaDestinos(Set<Destino> listaDestinos) {
+        this.listaDestinos = listaDestinos;
+    }
+
+    public List<Transporte> getListaTransporte() {
+        return listaTransporte;
+    }
+
+    public void setListaTransporte(List<Transporte> listaTransporte) {
+        this.listaTransporte = listaTransporte;
+    }
+
+    public List<Acomodacao> getListaAcomodacao() {
+        return listaAcomodacao;
+    }
+
+    public void setListaAcomodacao(List<Acomodacao> listaAcomodacao) {
+        this.listaAcomodacao = listaAcomodacao;
+    }
+
+    public List<Turismo> getListaTurismo() {
+        return listaTurismo;
+    }
+
+    public void setListaTurismo(List<Turismo> listaTurismo) {
+        this.listaTurismo = listaTurismo;
+    }
+
+    public Usuario getCurrentUser() {
+        return currentUser;
+    }
+
+    public void setCurrentUser(Usuario currentUser) {
+        this.currentUser = currentUser;
+    }
     // Métodos de reserva com tratamento de excecao
 
     public void fazerReservaTransporte(int nPassageiros, int nVagasTransportes) {
@@ -110,4 +194,6 @@ public class Agencia {
             System.err.println("Erro ao reservar turismo, vagas lotadas");
         }
     }
+
+    
 }
