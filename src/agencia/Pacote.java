@@ -7,8 +7,8 @@ import java.time.LocalDate;
 public class Pacote {
     private LinkedList<Destino> destinos;
     private LinkedList<Transporte> transportes;
-    private int nVagasTransportes;
     private LinkedList<Acomodacao> acomodacoes;
+    private int nVagasTransportes;
     private int nVagasAcomodacoes;
     private LinkedList<Turismo> turismos;
     private Usuario user;
@@ -23,14 +23,19 @@ public class Pacote {
     }
 
     //construtores
+    public Pacote(){
+        //cria pacote vazio
+    }
+        
+
     public Pacote(LinkedList<Destino> destinos, LinkedList<Transporte> transportes, LinkedList<Acomodacao> acomodacoes,
             LinkedList<Turismo> turismos, Usuario user, int nPassageiros, float preco, LocalDate dataFim,
             LocalDate dataInicio, Categoria categoria, int nVagasTransportes,
            int nVagasAcomodacoes, int nVagasTurismos) {
-        this.destinos = (destinos != null) ? destinos : new LinkedList<>();
-        this.transportes = (transportes != null) ? transportes : new LinkedList<>();
-        this.acomodacoes = (acomodacoes != null) ? acomodacoes : new LinkedList<>();
-        this.turismos = (turismos != null) ? turismos : new LinkedList<>();
+        this.destinos = (destinos != null) ? destinos : new LinkedList<Destino>();
+        this.transportes = (transportes != null) ? transportes : new LinkedList<Transporte>();
+        this.acomodacoes = (acomodacoes != null) ? acomodacoes : new LinkedList<Acomodacao>();
+        this.turismos = (turismos != null) ? turismos : new LinkedList<Turismo>();
         this.user = user;
         this.nPassageiros = nPassageiros;
         this.preco = preco;
@@ -40,4 +45,5 @@ public class Pacote {
         this.nVagasTransportes = nVagasTransportes;
         this.nVagasAcomodacoes = nVagasAcomodacoes;
     }
+
 }

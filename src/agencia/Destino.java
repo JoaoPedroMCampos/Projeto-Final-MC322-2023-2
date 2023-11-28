@@ -8,6 +8,12 @@ public class Destino {
     private String descricao;
     private List<String> avaliacao;
 
+    private List<Transporte> listaTransporte;
+    private List<Acomodacao> listaAcomodacao;
+    private List<Turismo> listaTurismo;
+    
+
+
  // Construtor
     public Destino(String name, List<Float> distancia, String descricao, List<String> avaliacao) {
         this.name = name;

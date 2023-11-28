@@ -1,5 +1,6 @@
 package agencia;
 import java.time.LocalDate;
+import java.util.LinkedList;
 
 public class Usuario {
 
@@ -11,6 +12,7 @@ public class Usuario {
 	private int telefone;
 	private String email;
 	private LocalDate nascimento;
+	private LinkedList<Pacote> listaPacotes;
 					
 	//construtor da classe
 	public Usuario(String login, String senha, String nome, int cpf, int telefone, String email, LocalDate nascimento) {
