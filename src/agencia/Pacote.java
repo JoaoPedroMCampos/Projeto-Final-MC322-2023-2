@@ -18,12 +18,16 @@ public class Pacote {
     private LocalDate dataFim;
     private LocalDate dataInicio;
     private Categoria categoria;
+    private String itemString;
 
-    //construtores
-    public Pacote(){
-        //cria pacote vazio
+    public class InfoPacote {
+    private List<itemString> itemString; 
+
+    public InfoPacote() {
+        // Cria um pacote vazio com uma lista vazia de itens
+        this.itensPacote = new ArrayList<>();
     }
-
+    
     public Pacote(LinkedList<Destino> destinos, LinkedList<Transporte> transportes, LinkedList<Acomodacao> acomodacoes,
             LinkedList<Turismo> turismos, Usuario user, int nPassageiros, float preco, LocalDate dataFim,
             LocalDate dataInicio, Categoria categoria, int nVagasTransportes,
