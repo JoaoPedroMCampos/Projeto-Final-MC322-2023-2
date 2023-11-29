@@ -9,12 +9,6 @@ public class Destino {
     private String descricao;
     private List<String> avaliacao;
 
-    private List<Transporte> listaTransporte;
-    private List<Acomodacao> listaAcomodacao;
-    private List<Turismo> listaTurismo;
-    
-
-
  // Construtor
     public Destino(String name, List<Float> distancia, String descricao, List<String> avaliacao) {
         this.name = name;
@@ -24,15 +18,29 @@ public class Destino {
     }
     
  // Método para definir o serviço procurado (Transporte, Acomodação, Turismo)
-    public void definirServicoProcurado(Pacote pacote, String tipoServico) {
+    public String definirServicoProcurado(Pacote pacote, String tipoServico) {
+        String servicoEscolhido = "";
+                
+    	Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite o serviço procurado: ");
+        tipoServico = scanner.nextLine();
+        
         switch (tipoServico.toLowerCase()) {
-        	System.out.print("Digite o serviço procurado: ");
-        	Scanner scanner = new Scanner(System.in);
-        	//?????????? aqui definir o retorno do metodo, foi feito apenas a leitura dos dados
+        	case "transporte":
+                servicoEscolhido = "Serviço de transporte escolhido";
+                break;
+            case "acomodacao":
+                servicoEscolhido = "Serviço de acomodacao escolhido";
+                break;
+            case "turismo":
+                servicoEscolhido = "Serviço de turismo escolhido";
+                break;
             default:
                 System.out.println("Serviço não reconhecido.");
         }
+        return servicoEscolhido;
     }
+    
     
     public String selecionarServicos() {
     	
