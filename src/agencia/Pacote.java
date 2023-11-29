@@ -19,15 +19,10 @@ public class Pacote {
     private LocalDate dataInicio;
     private Categoria categoria;
 
-    public enum Categoria {
-        AVENTURA, ESPORTE, GASTRONOMIA, ARTE, ENTRETENIMENTO;
-    }
-
     //construtores
     public Pacote(){
         //cria pacote vazio
     }
-        
 
     public Pacote(LinkedList<Destino> destinos, LinkedList<Transporte> transportes, LinkedList<Acomodacao> acomodacoes,
             LinkedList<Turismo> turismos, Usuario user, int nPassageiros, float preco, LocalDate dataFim,
