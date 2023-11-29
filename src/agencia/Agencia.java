@@ -18,16 +18,12 @@ public class Agencia {
     private String email;
     private List<Usuario> listaUsuario;
     private Set<Destino> listaDestinos;
-    private List<Transporte> listaTransporte;
-    private List<Acomodacao> listaAcomodacao;
-    private List<Turismo> listaTurismo;
 
     private Usuario currentUser;
 
     // construtor da classe
     public Agencia(String cnpj, String nome, int telefone, String email, List<Usuario> listaUsuario, 
-            Set<Destino> listaDestinos, List<Transporte> listaTransporte, 
-            List<Acomodacao> listaAcomodacao, List<Turismo> listaTurismo) {
+            Set<Destino> listaDestinos) {
 
         this.cnpj = cnpj;
         this.nome = nome;
@@ -35,9 +31,6 @@ public class Agencia {
         this.email = email;
         this.listaUsuario = listaUsuario;
         this.listaDestinos = listaDestinos;
-        this.listaTransporte = listaTransporte;
-        this.listaTurismo = listaTurismo;
-        this.listaAcomodacao = listaAcomodacao;
         currentUser = null;
     }
 
@@ -52,18 +45,29 @@ public class Agencia {
         this.listaUsuario.add(user);
         return true;
     }
-    
-    // Método para definir a data da viagem
+
     public void definirData(Pacote pacote, LocalDate dataInicio, LocalDate dataFim) {
-        pacote.setDataInicio(dataInicio);
-        pacote.setDataFim(dataFim);
+        Scanner scanner = new Scanner(System.in);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        System.out.print("Coloque a data de início (dd/MM/yyyy) para esse pacote. ");
+        String resposta_inicio_str = scanner.next();
+        LocalDate resposta_inicio = LocalDate.parse(resposta_inicio_str, formatter);
+        pacote.setDataInicio(resposta_inicio);
+
+        System.out.print("Coloque a data de fim (dd/MM/yyyy) para esse pacote. ");
+        String resposta_fim_str = scanner.next();
+        LocalDate resposta_fim = LocalDate.parse(resposta_fim_str, formatter);
+        pacote.setDataFim(resposta_fim);
     }
 
     // Método para definir a quantidade de pessoas na viagem
     public void definirQuantidadePessoas(Pacote pacote, int quantidadePessoas) {
-        pacote.setnPassageiros(quantidadePessoas);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Coloque a quantidade de pessoas para esse pacote. ");
+        int resposta = scanner.nextInt();
+        pacote.setnPassageiros(resposta);
     }
-
 
     // Método para verificar se deseja adicionar outro serviço ou encerrar o pacote
     public boolean desejaAdicionarOutroServico() {
@@ -164,30 +168,6 @@ public class Agencia {
 
     public void setListaDestinos(Set<Destino> listaDestinos) {
         this.listaDestinos = listaDestinos;
-    }
-
-    public List<Transporte> getListaTransporte() {
-        return listaTransporte;
-    }
-
-    public void setListaTransporte(List<Transporte> listaTransporte) {
-        this.listaTransporte = listaTransporte;
-    }
-
-    public List<Acomodacao> getListaAcomodacao() {
-        return listaAcomodacao;
-    }
-
-    public void setListaAcomodacao(List<Acomodacao> listaAcomodacao) {
-        this.listaAcomodacao = listaAcomodacao;
-    }
-
-    public List<Turismo> getListaTurismo() {
-        return listaTurismo;
-    }
-
-    public void setListaTurismo(List<Turismo> listaTurismo) {
-        this.listaTurismo = listaTurismo;
     }
 
     public Usuario getCurrentUser() {
