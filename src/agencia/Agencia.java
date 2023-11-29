@@ -2,9 +2,11 @@ package agencia;
 
 import java.util.List;
 import java.util.Set;
+import java.util.Scanner;
 
 import agencia.Pacote;
 
+import java.time.LocalDate;
 import java.util.LinkedList;
 
 public class Agencia {
@@ -49,6 +51,44 @@ public class Agencia {
         }
         this.listaUsuario.add(user);
         return true;
+    }
+    
+    // Método para definir a data da viagem
+    public void definirData(Pacote pacote, LocalDate dataInicio, LocalDate dataFim) {
+        pacote.setDataInicio(dataInicio);
+        pacote.setDataFim(dataFim);
+    }
+
+    // Método para definir a quantidade de pessoas na viagem
+    public void definirQuantidadePessoas(Pacote pacote, int quantidadePessoas) {
+        pacote.setnPassageiros(quantidadePessoas);
+    }
+
+
+    // Método para verificar se deseja adicionar outro serviço ou encerrar o pacote
+    public boolean desejaAdicionarOutroServico() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Deseja adicionar outro serviço (s/n)? ");
+        String resposta = scanner.next().toLowerCase();
+        return resposta.equals("s");
+    }
+    
+    public Pacote montarPacote() {
+    	//Qual o seu destino?
+    	//1 - X, 2 - Y
+    	Map<String, Object> Servico = this.listaDestinos(2).selecionarServicos
+    	//Quantos quartos
+    	int quartos = 343
+    	
+    			public void adicionarDestino(Pacote pacote, Destino destino) {
+            pacote.getDestinos().add(destino);
+        }
+    	
+    	
+    	Pacote novoPacote = new Pacote(adf, 343)
+    	
+    	return novoPacote
+    	
     }
 
     public boolean logIn(String login, String senha){

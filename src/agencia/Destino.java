@@ -1,5 +1,6 @@
 package agencia;
 
+import java.util.Scanner;
 import java.util.List;
 
 public class Destino {
@@ -20,6 +21,21 @@ public class Destino {
         this.distancia = distancia;
         this.descricao = descricao;
         this.avaliacao = avaliacao;
+    }
+    
+ // Método para definir o serviço procurado (Transporte, Acomodação, Turismo)
+    public void definirServicoProcurado(Pacote pacote, String tipoServico) {
+        switch (tipoServico.toLowerCase()) {
+        	System.out.print("Digite o serviço procurado: ");
+        	Scanner scanner = new Scanner(System.in);
+        	//?????????? aqui definir o retorno do metodo, foi feito apenas a leitura dos dados
+            default:
+                System.out.println("Serviço não reconhecido.");
+        }
+    }
+    
+    public String selecionarServicos() {
+    	
     }
 
     public String getName() {

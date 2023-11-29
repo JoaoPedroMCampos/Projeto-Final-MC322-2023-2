@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.time.LocalDate;
 
 //Atributos da classe
+//Criar getters e setters para os atributos a fim de usar em Agencia !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
 public class Pacote {
     private LinkedList<Destino> destinos;
     private LinkedList<Transporte> transportes;
